@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Test">
+
+	<typeAlias  alias="TestTest" type="egovframework.let.cop.com.service.TestTest"/>
+	<typeAlias  alias="TestVO" type="egovframework.let.cop.com.service.TestVO"/>
+
+	<resultMap id="TestList" class="egovframework.let.cop.com.service.TestVO">
+		<result property="testId" column="TEST_ID" columnIndex="1"/>
+		<result property="testName" column="TEST_NAME" columnIndex="2"/>
+		<result property="testAge" column="TEST_AGE" columnIndex="3"/>
+		<result property="testJob" column="TEST_JOB" columnIndex="4"/>
+	</resultMap>
+
+	<resultMap id="testInf" class="egovframework.let.cop.com.service.TestVO">
+		<result property="testId" column="TEST_ID" columnIndex="1"/>
+		<result property="testName" column="TEST_NAME" columnIndex="2"/>
+		<result property="testAge" column="TEST_AGE" columnIndex="3"/>
+		<result property="testJob" column="TEST_JOB" columnIndex="4"/>
+	</resultMap>
+
+	<select id="TestDAO.selectTestList" resultMap="TestList" >
+		<![CDATA[
+			SELECT
+				TEST_ID,
+				TEST_NAME,
+				TEST_AGE,
+				TEST_JOB
+			FROM TEST_TABLE
+		]]>
+	</select>	
+	
+	<insert id="TestDAO.insertTest" parameterClass="TestTest" >
+		<![CDATA[
+			INSERT INTO TEST_TABLE(
+				TEST_ID
+				, TEST_NAME
+				, TEST_AGE
+				, TEST_JOB
+			) VALUES(
+				#testId#
+				, #testName#
+				, #testAge#
+				, #testJob#
+			 )			
+		]]>
+	</insert>
+	
+	<delete id="TestDAO.deleteTest" parameterClass="Integer">
+ 		<![CDATA[
+			DELETE FROM TEST_TABLE 
+			WHERE TEST_ID = #testId#
+ 		]]>
+ 	</delete>
+ 	
+ 	<update id="TestDAO.updateTest" parameterClass="TestTest">
+		<![CDATA[
+			UPDATE TEST_TABLE SET
+				TEST_NAME = #testName#,
+				TEST_AGE = #testAge#,
+				TEST_JOB = #testJob#
+			WHERE TEST_ID = #testId#
+		]]>
+	</update>
+	
+	<select id="TestDAO.selectTestInf" parameterClass="int" resultMap="testInf">
+		<![CDATA[
+			SELECT 
+                TEST_ID
+                , TEST_NAME
+                , TEST_AGE
+                , TEST_JOB
+            FROM TEST_TABLE
+            WHERE TEST_ID = #testId#
+		]]>				
+	</select>
+
+</sqlMap>
