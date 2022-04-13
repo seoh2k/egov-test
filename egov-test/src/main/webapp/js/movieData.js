@@ -1,15 +1,5 @@
-let movieData = [
-	// 20220412093158
-	// https://yts.mx/api/v2/list_movies.json?sort_by=rating
-
-	{
-	  "status": "ok",
-	  "status_message": "Query was successful",
-	  "data": {
-	    "movie_count": 40596,
-	    "limit": 20,
-	    "page_number": 1,
-	    "movies": [
+let movieData = {
+	  "movies": [
 	      {
 	        "id": 37384,
 	        "url": "https://yts.mx/movies/jai-bhim-2021",
@@ -1175,14 +1165,8 @@ let movieData = [
 	        "date_uploaded_unix": 1605838748
 	      }
 	    ]
-	  },
-	  "@meta": {
-	    "server_time": 1649723516,
-	    "server_timezone": "CET",
-	    "api_version": 2,
-	    "execution_time": "0.01 ms"
-	  }
-	}
+};
+
+export default movieData;
 	//push : 넣는거
 	//pop : 빼는거
-]
