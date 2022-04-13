@@ -11,6 +11,7 @@
 <h1>영화 목록</h1>
 <div id="movieList">
 	<movie-list></movie-list>
+	
 </div>
 </body>
 </html>
