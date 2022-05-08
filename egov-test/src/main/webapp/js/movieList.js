@@ -52,5 +52,6 @@ export default{
 		create() {
 			this.$router.push('MovieCreate')
 		}
+		
 	}
 }
