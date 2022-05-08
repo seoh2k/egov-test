@@ -8,7 +8,7 @@
 <script src="./js/movieInstance.js" type="module"></script>
 </head>
 <body>
-<h1>영화 목록</h1>
+<h1>Movie List</h1>
 <div id="movieList">
 	<movie-list></movie-list>
 </div>
