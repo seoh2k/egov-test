@@ -4,7 +4,7 @@ export default{
 	name: 'MovieList',
 	template : `
 		<div>
-			<button><router-link to="/MovieCreate">입력</router-link></button>
+			<button><a href="/test/movieCreate.do">입력</a></button>
 			<table>
 				<thead>
 					<tr>
@@ -49,8 +49,5 @@ export default{
 				return data;
 			}
 		},
-		create() {
-			this.$router.push('MovieCreate')
-		}
 	}
 }
