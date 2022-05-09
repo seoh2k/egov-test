@@ -11,4 +11,10 @@ public class MovieController {
     public String movieList() throws Exception {
 		return "cop/com/MovieList";
     }
+    
+    // 입력
+    @RequestMapping("/movieCreate.do")
+    public String movieCreate() throws Exception {
+		return "cop/com/MovieCreate";
+    }
 }

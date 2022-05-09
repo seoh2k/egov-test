@@ -1,8 +1,10 @@
 import movieData from './movieData.js';
 
 export default{
+	name: 'MovieList',
 	template : `
 		<div>
+			<button><router-link to="/MovieCreate">입력</router-link></button>
 			<table>
 				<thead>
 					<tr>
@@ -46,6 +48,9 @@ export default{
 			} else {
 				return data;
 			}
+		},
+		create() {
+			this.$router.push('MovieCreate')
 		}
 	}
 }
