@@ -40,7 +40,7 @@ export default{
 	},
 	mounted() {
 		this.movieList = movieData.movies;
-    },
+	},
 	methods : {
 		loadTxt(data, type) {
 			if(type == 'title' && data.length > 30){
