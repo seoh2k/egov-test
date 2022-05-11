@@ -5,11 +5,11 @@
 <meta charset="UTF-8">
 <title>Create Movie</title>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="./js/movieCreate.js" type="module"></script>
+<script src="./js/movieInstance.js" type="module"></script>
 </head>
 <body>
 <h1>영화 입력</h1>
-<div>
+<div id="movieCreate">
 	<movie-create></movie-create>
 </div>
 </body>

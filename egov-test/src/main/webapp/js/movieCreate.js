@@ -1,5 +1,4 @@
 var movie_create = {
-	name: 'MovieCreate',
 	template : `
 		<div>
 			<table>
@@ -50,8 +49,6 @@ var movie_create = {
 	}
 }
 
-new Vue({
-	components : {
-		'movie-create' : movie_create,
-	}
-})
+export default {
+	movie_create
+}
