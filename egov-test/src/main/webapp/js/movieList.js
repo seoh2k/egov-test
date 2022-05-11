@@ -1,7 +1,6 @@
 import movieData from './movieData.js';
 
 export default{
-	name: 'MovieList',
 	template : `
 		<div>
 			<button><a href="/test/movieCreate.do">입력</a></button>
@@ -17,7 +16,7 @@ export default{
 					</tr>
 				</thead>
 				<tbody>
-					<tr v-for="item in movieList">
+					<tr v-for="item in movies">
 						 <td v-text="loadTxt(item.id, 'id')"></td>
 						 <td><img v-bind:src="loadTxt(item.medium_cover_image, 'poster')"></td>
 						 <td v-text="loadTxt(item.title, 'title')"></td>
@@ -35,11 +34,11 @@ export default{
 	`,
 	data() {
 		return {
-			movieList : {}
+			movies : {}
 		};
 	},
 	mounted() {
-		this.movieList = movieData.movies;
+		this.movies = movieData.movies;
 	},
 	methods : {
 		loadTxt(data, type) {

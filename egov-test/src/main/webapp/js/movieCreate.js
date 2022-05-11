@@ -1,31 +1,12 @@
-var movie_create = {
-	template : `
-		<div>
-			<table>
-				<tr>
-					<th>Poster</th>
-					<td><input type="text" v-model="movie.poster"></td>
-				</tr>
-				<tr>
-					<th>Title</th>
-					<td><input type="text" v-model="movie.title"></td>
-				</tr>
-				<tr>
-					<th>Rating</th>
-					<td><input type="text" v-model="movie.rating"></td>
-				</tr>
-				<tr>
-					<th>Genres</th>
-					<td><input type="text" v-model="movie.genres"></td>
-				</tr>
-			</table>
-			<button @click="insert">Insert</button>
-			<button @click="back">List</button>
-		</div>
-	`,
+import movieData from './movieData.js';
+
+var movie = movieData;
+
+export default {
 	data() {
 		return {
 			movie: {
+				data: movie,
 				poster: '',
 				title: '',
 				rating: '',
@@ -34,21 +15,17 @@ var movie_create = {
 		};
 	},
 	mounted() {
-		
+		this.save();
     },
 	methods : {
-		save: function(){
-			this.$axios.post('/insertMovie.do', this.movie)
-			.then(() => {
-				this.push('/movieList.do')
+		save() {
+			this.data.push({
+				poster: this.poster,
+				title: this.title,
+				rating: this.rating,
+				genres: this.genres,
 			})
-			.catch((ex) => {
-				console.error("failed insert Movie", ex)
-			})
+			alert('저장 완료');
 		}
 	}
-}
-
-export default {
-	movie_create
 }
