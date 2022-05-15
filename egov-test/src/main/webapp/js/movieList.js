@@ -1,9 +1,8 @@
-import movieData from './movieData.js';
-
-export default{
+export default {
 	template : `
 		<div>
-			<button><a href="/test/movieCreate.do">입력</a></button>
+			<h1>Movie List</h1>
+			<button><a href="#" @click="create()">입력</a></button>
 			<table>
 				<thead>
 					<tr>
@@ -17,11 +16,11 @@ export default{
 				</thead>
 				<tbody>
 					<tr v-for="item in movies">
-						 <td v-text="loadTxt(item.id, 'id')"></td>
+						 <td>{{ item.id }}</td>
 						 <td><img v-bind:src="loadTxt(item.medium_cover_image, 'poster')"></td>
 						 <td v-text="loadTxt(item.title, 'title')"></td>
-						 <td v-text="loadTxt(item.year, 'year')"></td>
-						 <td v-text="loadTxt(item.rating, 'rating')"></td>
+						 <td>{{ item.year }}</td>
+						 <td>{{ item.rating }}</td>
 						 <td>
 							<ul v-for="genres in loadTxt(item.genres, 'genres')">
 								<li v-text="genres"></li>
@@ -32,13 +31,14 @@ export default{
 			</table>
 		</div>
 	`,
-	data() {
+	props: [],
+	data : function(){
 		return {
-			movies : {}
-		};
+			movies : [],
+		}
 	},
 	mounted() {
-		this.movies = movieData.movies;
+		this.hide();
 	},
 	methods : {
 		loadTxt(data, type) {
@@ -48,5 +48,11 @@ export default{
 				return data;
 			}
 		},
+		show : function(){
+			this.show();
+		},
+		hide : function(){
+			this.hide();
+		}
 	}
 }

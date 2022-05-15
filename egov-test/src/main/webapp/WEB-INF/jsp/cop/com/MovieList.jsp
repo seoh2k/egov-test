@@ -2,15 +2,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>MoviesList</title>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="./js/movieInstance.js" type="module"></script>
+	<meta charset="UTF-8">
+	<title>MoviesList</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="./js/movieMain.js" type="module"></script>
 </head>
 <body>
-<h1>Movie List</h1>
-<div id="movieList">
-	<movie-list></movie-list>
-</div>
+	<div id="movieMain">
+		<movie-list></movie-list>
+	</div>
 </body>
 </html>

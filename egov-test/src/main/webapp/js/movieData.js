@@ -1167,6 +1167,6 @@ let movieData = {
 	    ]
 };
 
-export default movieData;
+export default { movieData }
 	//push : 넣는거
 	//pop : 빼는거
