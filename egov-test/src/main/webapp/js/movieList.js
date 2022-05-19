@@ -1,3 +1,5 @@
+import MovieData from "./movieData.js";
+
 export default {
 	template : `
 		<div>
@@ -38,7 +40,7 @@ export default {
 		}
 	},
 	mounted() {
-		this.hide();
+		this.movies = MovieData.movies;
 	},
 	methods : {
 		loadTxt(data, type) {

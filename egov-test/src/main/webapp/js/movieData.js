@@ -1,5 +1,5 @@
-let movieData = {
-	  "movies": [
+export default { 
+	"movies": [
 	      {
 	        "id": 37384,
 	        "url": "https://yts.mx/movies/jai-bhim-2021",
@@ -1164,9 +1164,7 @@ let movieData = {
 	        "date_uploaded": "2020-11-20 03:19:08",
 	        "date_uploaded_unix": 1605838748
 	      }
-	    ]
-};
-
-export default { movieData }
+	]
+}
 	//push : 넣는거
 	//pop : 빼는거
